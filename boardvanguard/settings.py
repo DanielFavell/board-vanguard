@@ -31,10 +31,9 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [".gitpod.io",".herokuapp.com"]
-
+ALLOWED_HOSTS = ["8000-danielfavel-boardvangua-wxqjmtki5m8.ws-eu110.gitpod.io",".herokuapp.com"]
 
 # Application definition
 
@@ -96,6 +95,11 @@ DATABASES = {
 'default':
 dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.gitpod.io",
+    "https://*.herokuapp.com"
+]
 
 
 # Password validation

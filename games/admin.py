@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Games, Matches
+from .models import GameListing, MatchListing
 
 # Register your models here.
-admin.site.register(Games)
-admin.site.register(Matches)
+admin.site.register(GameListing)
+admin.site.register(MatchListing)

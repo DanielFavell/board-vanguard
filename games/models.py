@@ -6,6 +6,7 @@ PLAYERS = ((0,"Yourself"), (1,"Opponent"))
 # Create your models here.
 class GameListing(models.Model):
     game_name = models.CharField(max_length=200, unique=True)
+    slug = models.SlugField(max_length=250, unique=True, blank=True)
     description = models.TextField(blank=True)
     def __str__(self):
         return f"{self.game_name}"

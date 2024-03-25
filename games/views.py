@@ -14,7 +14,7 @@ def home_page(request):
 class GameList(generic.ListView):
     model = GameListing
     queryset = GameListing.objects.all()
-    template_name = "current_games.html"
+    template_name = "gamelisting_list.html"
 
 def game_detail(request, slug):
     queryset = GameListing.objects.all()
@@ -45,3 +45,6 @@ def new_match(request):
         match_form = NewMatch()
 
     return render(request, "games/add_match.html", {"match_form":match_form})
+
+def match_success(request):
+    return render(request, "games/match_create_success.html")

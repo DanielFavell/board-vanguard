@@ -4,9 +4,9 @@
 
 <h1>{{ game.game_name }}</h1>
 <p>
-    {{ game.description }}
+    {{ game.description | safe }}
 </p>
 
-<a href="{url 'match_history' game.game_name}">Match History</a>
+<a href="{% url 'match_history' game.slug %}">Match History</a>
 
 {% endblock content %}

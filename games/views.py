@@ -18,7 +18,7 @@ class GameList(generic.ListView):
 
 def game_detail(request, slug):
     queryset = GameListing.objects.all()
-    game = get_object_or_404(queryset, game_name=slug)
+    game = get_object_or_404(queryset, slug=slug)
     return render(
         request,
         "games/game_detail.html",
@@ -29,8 +29,8 @@ def game_detail(request, slug):
 
 class MatchHistory(generic.ListView):
     model = MatchListing
-    queryset = GameListing.objects.all()
-    template_name = "match_history.html"
+    queryset = MatchListing.objects.all()
+    template_name = "matchlisting_list.html"
 
 def new_match(request):
     if request.method == "POST":

@@ -6,7 +6,7 @@
 {% for game in gamelisting_list %}
 <div class="container-fluid">
     <div class="row">
-        <a href="{% url 'match_history' game.slug %}"> <h3>{{ game.game_name }}</h3> </a>
+        <a href="{% url 'game_detail' game.slug %}"> <h3>{{ game.game_name }}</h3> </a>
     </div>
 </div>
 {% endfor %}

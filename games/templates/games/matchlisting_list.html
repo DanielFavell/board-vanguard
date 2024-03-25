@@ -4,15 +4,18 @@
 
 <h1>match history:</h1>
 {% for match in matchlisting_list %}
+{% if match.first_player == user or match.opponent == user %}
 <div class="container-fluid">
-    <div class="row">
-        <span>Yourself VS {{ match.opponent }} on the {{ match.time_created }}</span>
+    <div class="row bg-secondary bg-gradient">
+        <span>{{ match.first_player }} VS {{ match.opponent }} on the {{ match.time_created }}</span>
         <br>
 
-        <span>The winner was {% if match.winner == 0 %} Yourself {% else %} {{ match.opponent }} {% endif %}</span>
+        <span>The winner was {% if match.winner == 0 %} {{ match.first_player }} {% else %} {{ match.opponent }} {% endif %}</span>
 
     </div>
 </div>
+<br>
+{% endif %}
 {% endfor %}
 
 {% endblock content %}

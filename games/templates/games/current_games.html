@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+{% for game in current_games %}
+<div class="container-fluid">
+    <div class="row">
+        <a href="{% url 'game_detail' game.game_name %}"> <h3>{{ game.game_name }}</h3> </a>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock content %}

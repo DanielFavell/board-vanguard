@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+{% for match in history %}
+<div class="container-fluid">
+    <div class="row">
+        <span>Yourself VS {{ match.opponent }} on the {{ match.time_created }}</span>
+        <br>
+        <span>The winner was {{ match.winner }}</span>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock content %}

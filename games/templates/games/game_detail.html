@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ game.game_name }}</h1>
+<p>
+    {{ game.description }}
+</p>
+
+<a href="{url 'match_history' game.game_name}">Match History</a>
+
+{% endblock content %}
